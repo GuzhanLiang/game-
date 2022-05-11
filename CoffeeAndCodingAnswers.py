@@ -126,6 +126,7 @@ lesson 4
 def move_enemy_lazers(ammo, player):
     for lazer in ammo:
         lazer.x -= LAZER_VEL
+        
         if player.rect.colliderect(lazer):
             if player.shieldHealth > 0:
                 player.shieldHealth -= LAZER_DAMAGE
@@ -135,6 +136,18 @@ def move_enemy_lazers(ammo, player):
         elif lazer.x < 0:
             ammo.remove(lazer)
             
+            
+def check(enemies,player):
+    for enemy in  enemies:
+        if player.rect.colliderect(enemy):
+            playSound(GAME_OVER_SOUND)
+            message = "Game Over!"
+            draw_message(message)
+            all_sprites.empty()
+            run = False
+            main()
+
+
 def move_lazers(ammo, enemies, player):
     for lazer in ammo:
         lazer.x += LAZER_VEL
@@ -171,6 +184,11 @@ def draw_window(keys_pressed, player,enemies,powerUps, entered, defeated, score)
     player.move(keys_pressed)
     
     enemies.update()
+    
+
+    check(enemies,player)
+    
+    
     move_lazers(player.lazers, enemies, player)
     for power in powerUps:
         if pygame.sprite.collide_rect(player,power):
@@ -214,10 +232,15 @@ def main():
     all_sprites.add(player)
     clock = pygame.time.Clock()
 
+    global run 
     run = True
+    
     while run:
         
         clock.tick(FPS)
+        
+        
+        
 
         if player.health <= 0 or entered == MAX_ENEMY_ENTRY:
             playSound(GAME_OVER_SOUND)
@@ -287,6 +310,10 @@ def main():
         keys_pressed = pygame.key.get_pressed()
         
         draw_window(keys_pressed, player,enemies,powerUps,entered, defeated, score)
+        
+
+        
+        
     main()
 
 
