@@ -1,6 +1,6 @@
 # game-
 
-- This game is code uder the turtoial of CoffeeAndCoding work shop
+- This game is coded uder the turtoial of CoffeeAndCoding workshop
 - Change is made that when player collide with enemy will also game over 
 
 
