@@ -1,4 +1,4 @@
-# game-
+# Pygame
 
 <h1> This game is coded uder the turtoial of CoffeeAndCoding workshop <h1>
 <h1> Change is made that when player collide with enemy will also game over <h1>
