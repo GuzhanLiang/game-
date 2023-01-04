@@ -1,7 +1,7 @@
 # game-
 
-- This game is coded uder the turtoial of CoffeeAndCoding workshop
-- Change is made that when player collide with enemy will also game over 
+<h1> This game is coded uder the turtoial of CoffeeAndCoding workshop <h1>
+<h1> Change is made that when player collide with enemy will also game over <h1>
 
 
 ![g](https://user-images.githubusercontent.com/73972656/167971069-a0b32c52-b022-471d-b859-a0fcee2f9621.PNG)
